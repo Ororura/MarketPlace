@@ -15,17 +15,22 @@ export const CreateProduct: FC = () => {
   const onSubmit: SubmitHandler<SendData> = async (data) => {
     const formData: FormData = new FormData();
     console.log(data.file);
-    formData.append("file", data.file[0]);
     formData.append(
       "product",
-      JSON.stringify({
-        title: data.title,
-        price: data.price,
-        description: data.description,
-        category: data.category,
-        rate: data.rate,
-      }),
+      new Blob(
+        [
+          JSON.stringify({
+            title: data.title,
+            price: data.price,
+            description: data.description,
+            category: data.category,
+            rate: data.rate,
+          }),
+        ],
+        { type: "application/json" },
+      ),
     );
+    formData.append("file", data.file[0]);
 
     console.log(formData);
 
