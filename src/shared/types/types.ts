@@ -5,7 +5,9 @@ interface IProduct {
   description: string;
   category: string;
   image: {
+    data: string;
     id: number;
+    name: string;
   };
   rate: number;
 }

@@ -17,7 +17,7 @@ const Product: FC = () => {
         data.map((value: IProduct, idx) => (
           <div key={idx} className={styles.ProductCard}>
             <Image
-              src={`http://localhost:8080/images/${value.image.id}`}
+              src={`http://localhost:8080/images/${value.image.name}`}
               alt={value.image.id.toString()}
               width={80}
               height={100}
