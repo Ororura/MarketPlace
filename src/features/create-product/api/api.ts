@@ -1,4 +1,4 @@
-import { api, IProduct } from "@/shared";
+import { api } from "@/shared";
 import {
   BaseQueryFn,
   EndpointBuilder,
@@ -6,7 +6,6 @@ import {
   FetchBaseQueryError,
   FetchBaseQueryMeta,
 } from "@reduxjs/toolkit/query";
-import { SendData } from "@/shared/types/types";
 
 export const createProductApi = api.injectEndpoints({
   endpoints: (
@@ -16,7 +15,7 @@ export const createProductApi = api.injectEndpoints({
       "api"
     >,
   ) => ({
-    createUser: build.mutation<FormData, FormData>({
+    createUser: build.mutation<void, FormData>({
       query: (body) => ({
         url: "upload",
         method: "POST",

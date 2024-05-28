@@ -16,6 +16,7 @@ export const CreateProduct: FC = () => {
 
   const onSubmit: SubmitHandler<SendData> = async (data) => {
     const formData: FormData = new FormData();
+
     formData.append(
       "product",
       new Blob(
@@ -31,6 +32,7 @@ export const CreateProduct: FC = () => {
         { type: "application/json" },
       ),
     );
+
     formData.append("file", data.file[0]);
 
     try {
