@@ -1,6 +1,6 @@
 import { combineReducers } from "redux";
 import { api } from "@/shared/api";
-import { productSlice } from "@/entity/product";
+import { productSlice } from "@/entity/product/model";
 
 export const reducers = combineReducers({
   [api.reducerPath]: api.reducer,
