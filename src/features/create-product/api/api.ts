@@ -1,4 +1,3 @@
-import { api } from "@/shared";
 import {
   BaseQueryFn,
   EndpointBuilder,
@@ -6,6 +5,7 @@ import {
   FetchBaseQueryError,
   FetchBaseQueryMeta,
 } from "@reduxjs/toolkit/query";
+import { api } from "@/shared/api";
 
 export const createProductApi = api.injectEndpoints({
   endpoints: (

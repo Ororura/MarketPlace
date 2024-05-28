@@ -1,7 +1,7 @@
 import { FC } from "react";
 import { CreateProduct } from "@/features/create-product/ui";
 import styles from "./AdminPanelWidget.module.css";
-import { DeleteProduct } from "@/features/delete-product";
+import { DeleteProduct } from "@/features/delete-product/ui";
 
 const AdminPanelWidget: FC = () => {
   return (
