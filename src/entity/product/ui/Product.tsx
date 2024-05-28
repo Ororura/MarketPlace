@@ -16,12 +16,20 @@ const Product: FC = () => {
       {data &&
         data.map((value: IProduct, idx) => (
           <div key={idx} className={styles.ProductCard}>
-            <Image
-              src={`http://localhost:8080/images/${value.image.name}`}
-              alt={value.image.id.toString()}
-              width={80}
-              height={100}
-            ></Image>
+            <div className={styles.ProductImage}>
+              <Image
+                src={`http://localhost:8080/images/${value.image.name}`}
+                alt="Описание изображения"
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
+            {/*<Image*/}
+            {/*  src={`http://localhost:8080/images/${value.image.name}`}*/}
+            {/*  alt={value.image.id.toString()}*/}
+            {/*  width={80}*/}
+            {/*  height={100}*/}
+            {/*></Image>*/}
             <p className={styles.ProductTitle}>{value.title}</p>
             <p className={styles.ProductDescription}>{value.description}</p>
             <p className={styles.ProductCategory}>{value.category}</p>

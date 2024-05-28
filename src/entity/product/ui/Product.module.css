@@ -7,6 +7,7 @@
     max-width: 200px;
     text-align: center;
     height: 250px;
+    width: 250px;
 }
 
 .ProductTitle {
@@ -49,4 +50,12 @@
     color: #666;
     text-align: center;
     margin-top: 50px;
+}
+
+.ProductImage {
+    min-width: 80px;
+    max-width: 200px;
+    min-height: 100px;
+    max-height: 120px;
+    position: relative
 }
