@@ -43,6 +43,7 @@ export const CreateProduct: FC = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+      <p>Создать новую карточку с продуктом</p>
       <input type="file" {...register("file")} className={styles.input} />
       <input type="text" placeholder="Название" {...register("title")} className={styles.input} />
       <input type="text" placeholder="Описание" {...register("description")} className={styles.input} />
