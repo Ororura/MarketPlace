@@ -7,7 +7,6 @@ import { CreateProduct } from "@/features/create-product/ui";
 const ProductWidget: FC = () => {
   return (
     <div className={styles.ProductWrapper}>
-      <CreateProduct></CreateProduct>
       <Product></Product>
     </div>
   );

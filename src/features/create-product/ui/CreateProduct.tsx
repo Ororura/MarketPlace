@@ -1,9 +1,11 @@
 "use client";
+
 import { FC, useEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { SendData } from "@/shared/types/types";
 import { useCreateUserMutation } from "@/features/create-product/api";
 import { useGetProductQuery } from "@/entity/product/api/api";
+import styles from "./CreateProduct.module.css";
 
 export const CreateProduct: FC = () => {
   const { register, handleSubmit } = useForm<SendData>();
@@ -14,7 +16,6 @@ export const CreateProduct: FC = () => {
 
   const onSubmit: SubmitHandler<SendData> = async (data) => {
     const formData: FormData = new FormData();
-    console.log(data.file);
     formData.append(
       "product",
       new Blob(
@@ -32,8 +33,6 @@ export const CreateProduct: FC = () => {
     );
     formData.append("file", data.file[0]);
 
-    console.log(formData);
-
     try {
       await postData(formData).unwrap();
       await refetch();
@@ -43,16 +42,18 @@ export const CreateProduct: FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <input type="file" {...register("file")} />
-      <input type="text" placeholder="Title" {...register("title")} />
-      <input type="number" placeholder="Price" {...register("price")} />
-      <input type="text" placeholder="Description" {...register("description")} />
-      <input type="text" placeholder="Category" {...register("category")} />
-      <input type="number" placeholder="Rate" {...register("rate")} />
-      <button type="submit" disabled={isLoading}>
-        {isLoading ? "Uploading..." : "Upload"}
+    <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+      <input type="file" {...register("file")} className={styles.input} />
+      <input type="text" placeholder="Название" {...register("title")} className={styles.input} />
+      <input type="text" placeholder="Описание" {...register("description")} className={styles.input} />
+      <input type="text" placeholder="Категория" {...register("category")} className={styles.input} />
+      <input type="number" placeholder="Цена" {...register("price")} className={styles.input} />
+      <input type="number" placeholder="Рейтинг" {...register("rate")} className={styles.input} />
+      <button type="submit" disabled={isLoading} className={styles.button}>
+        {isLoading ? "Загружается..." : "Создать"}
       </button>
     </form>
   );
 };
+
+export default CreateProduct;
