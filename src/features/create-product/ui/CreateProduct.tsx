@@ -58,5 +58,3 @@ export const CreateProduct: FC = () => {
     </form>
   );
 };
-
-export default CreateProduct;
