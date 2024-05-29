@@ -4,6 +4,7 @@ import "../globals.css";
 import { Header } from "@/shared/ui/header";
 import StoreProvider from "@/app/providers/StoreProvider";
 import { NextFont } from "next/dist/compiled/@next/font";
+import { ReactNode } from "react";
 
 const inter: NextFont = Inter({ subsets: ["latin"] });
 
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <StoreProvider>
