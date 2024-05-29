@@ -1,4 +1,5 @@
-import { api } from "@/shared";
+import { api } from "@/shared/api";
+
 
 export const deleteProductApi = api.injectEndpoints({
   endpoints: (build) => ({

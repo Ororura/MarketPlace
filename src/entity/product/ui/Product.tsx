@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { useGetProductQuery } from "@/entity/product/api/api";
-import { IProduct } from "@/shared";
 import styles from "./Product.module.css";
 import Image from "next/image";
+import { IProduct } from "@/shared/types";
 
 const Product: FC = () => {
   const { data, isFetching } = useGetProductQuery();

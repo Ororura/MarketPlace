@@ -1,4 +1,4 @@
-import { api } from "@/shared";
+import { api } from "@/shared/api";
 
 export const createProductApi = api.injectEndpoints({
   endpoints: (build) => ({
