@@ -6,13 +6,23 @@ import { SendData } from "@/shared/types/types";
 import { useCreateUserMutation } from "@/features/create-product/api";
 import { useGetProductQuery } from "@/entity/product/api/api";
 import styles from "./CreateProduct.module.css";
+import { stompClient } from "@/shared/api";
 
 export const CreateProduct: FC = () => {
   const { register, handleSubmit } = useForm<SendData>();
   const [postData, { isLoading }] = useCreateUserMutation();
   const { refetch } = useGetProductQuery();
 
-  useEffect(() => {}, []);
+  stompClient.onConnect = (frame) => {
+    console.log(frame);
+    stompClient.subscribe("/topic/test", (message) => {
+      console.log(JSON.parse(message.body));
+    });
+  };
+
+  useEffect(() => {
+    stompClient.activate();
+  }, []);
 
   const onSubmit: SubmitHandler<SendData> = async (data) => {
     const formData: FormData = new FormData();
@@ -38,6 +48,10 @@ export const CreateProduct: FC = () => {
     try {
       await postData(formData).unwrap();
       await refetch();
+      stompClient.publish({
+        destination: "/app/test",
+        body: "test",
+      });
     } catch (error) {
       console.error("Error uploading file:", error);
     }

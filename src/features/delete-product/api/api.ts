@@ -1,6 +1,5 @@
 import { api } from "@/shared/api";
 
-
 export const deleteProductApi = api.injectEndpoints({
   endpoints: (build) => ({
     deleteProduct: build.mutation<void, number>({
