@@ -9,8 +9,6 @@ const Notifications: FC = () => {
   const sliceData = useAppSelector((state) => state.Notification.notifications);
   const dispatch = useAppDispatch();
 
-  console.log(sliceData);
-
   useEffect(() => {
     if (data) {
       dispatch(addNewNotification(data));
@@ -20,7 +18,7 @@ const Notifications: FC = () => {
   return (
     <div>
       <p>На торговую площадку был выставлен новый продукт!</p>
-      {sliceData && sliceData.map((el, idx) => <div key={idx}>{el.product && <p>{el.product.title}</p>}</div>)}
+      {sliceData && sliceData.length > 0 && <p>{sliceData[sliceData.length - 1].product?.title}</p>}
     </div>
   );
 };

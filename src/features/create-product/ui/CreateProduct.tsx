@@ -16,8 +16,7 @@ export const CreateProduct: FC = () => {
   const dispatch = useAppDispatch();
   const { refetch } = useGetProductQuery();
 
-  stompClient.onConnect = (frame) => {
-    console.log(frame);
+  stompClient.onConnect = () => {
     stompClient.subscribe("/topic/test", (message) => {
       dispatch(addNewNotification(JSON.parse(message.body)));
     });

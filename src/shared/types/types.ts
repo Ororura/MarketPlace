@@ -1,15 +1,11 @@
 interface IProduct {
-  id: number;
-  title: string;
-  price: number;
-  description: string;
   category: string;
-  image: {
-    data: string;
-    id: number;
-    name: string;
-  };
+  description: string;
+  id: number;
+  imageName: string;
+  price: number;
   rate: number;
+  title: string;
 }
 
 interface SendData {
