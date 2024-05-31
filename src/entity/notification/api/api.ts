@@ -3,7 +3,7 @@ import { INotification } from "@/entity/notification/types";
 
 export const notificationApi = api.injectEndpoints({
   endpoints: (build) => ({
-    getNotifications: build.query<INotification, void>({
+    getNotifications: build.query<INotification[], void>({
       query: () => "notifications",
     }),
   }),
