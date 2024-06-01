@@ -1,24 +1,9 @@
-.notificationsWidget {
-    position: relative;
-}
-
-.notificationButton {
-    background-color: #4a90e2;
-    color: #ffffff;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
 .notificationsContainer {
-    top: 100%;
-    right: 0;
+    position: absolute;
     background-color: #4a90e2;
-    border: 1px solid #ccc;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    max-height: 400px;
-    margin-top: 10px;
+    top: 35px;
+    padding: 30px;
+    max-width: 250px;
+    border-radius: 20px;
+    z-index: 10;
 }

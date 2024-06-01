@@ -31,8 +31,10 @@ const Header: FC<PropsWithChildren> = ({ children }) => {
                   Админ панель
                 </Link>
               </li>
-              <li className={styles.navLink}>
-                <p onClick={handlerClick}>Уведомления</p>
+              <li className={styles.navItemWithNotifications}>
+                <span className={styles.navLink} onClick={handlerClick}>
+                  Уведомления
+                </span>
                 {isOpen && <NotificationsWidget></NotificationsWidget>}
               </li>
             </ul>
