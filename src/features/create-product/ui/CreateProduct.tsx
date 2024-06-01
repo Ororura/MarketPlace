@@ -1,30 +1,17 @@
 "use client";
 
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { SendData } from "@/shared/types/types";
 import { useCreateUserMutation } from "@/features/create-product/api";
 import { useGetProductQuery } from "@/entity/product/api/api";
 import styles from "./CreateProduct.module.css";
 import { stompClient } from "@/shared/api";
-import { useAppDispatch } from "@/app/providers";
-import { addNewNotification } from "@/entity/notification/model";
 
 export const CreateProduct: FC = () => {
   const { register, handleSubmit } = useForm<SendData>();
   const [postData, { isLoading }] = useCreateUserMutation();
-  const dispatch = useAppDispatch();
   const { refetch } = useGetProductQuery();
-
-  stompClient.onConnect = () => {
-    stompClient.subscribe("/topic/test", (message) => {
-      dispatch(addNewNotification(JSON.parse(message.body)));
-    });
-  };
-
-  useEffect(() => {
-    stompClient.activate();
-  }, []);
 
   const onSubmit: SubmitHandler<SendData> = async (data) => {
     const formData: FormData = new FormData();

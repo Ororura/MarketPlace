@@ -20,7 +20,7 @@ const Notifications: FC = () => {
     <div>
       {sliceData &&
         sliceData.length > 0 &&
-        sliceData.map((data, idx) => (
+        [...sliceData].reverse().map((data, idx) => (
           <div className={styles.NotificationWrapper} key={idx}>
             {data.status === "created" && <p style={{ color: "#e3e3e3" }}>Добавлен </p>}
             <p>{data.product?.title}</p>
