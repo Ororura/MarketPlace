@@ -33,9 +33,6 @@
     margin: 0;
 }
 
-.navItem {
-    margin: 0;
-}
 
 .navLink {
     text-decoration: none;
@@ -51,7 +48,6 @@
 .navLink:hover {
     background-color: #4a90e2;
     color: #ffffff;
-    transform: scale(1.05);
 }
 
 @media (max-width: 768px) {

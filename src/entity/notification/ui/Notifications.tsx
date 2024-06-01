@@ -16,9 +16,9 @@ const Notifications: FC = () => {
   }, [data, dispatch]);
 
   return (
-    <div>
+    <div style={{ position: "absolute" }}>
       <p>На торговую площадку был выставлен новый продукт!</p>
-      {sliceData && sliceData.length > 0 && <p>{sliceData[sliceData.length - 1].product?.title}</p>}
+      {sliceData && sliceData.length > 0 && sliceData.map((data, idx) => <p key={idx}>{data.product?.title}</p>)}
     </div>
   );
 };

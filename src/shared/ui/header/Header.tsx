@@ -1,13 +1,17 @@
-import { FC, ReactNode } from "react";
+"use client";
+import { FC, PropsWithChildren, useState } from "react";
 import styles from "./Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { NotificationsWidget } from "@/widgets/notifications-widget/ui/NotificationsWidget";
 
-interface Props {
-  children: ReactNode;
-}
+const Header: FC<PropsWithChildren> = ({ children }) => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
-const Header: FC<Props> = ({ children }) => {
+  const handlerClick = (): void => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
       <header className={styles.headerWrapper}>
@@ -17,15 +21,19 @@ const Header: FC<Props> = ({ children }) => {
           </div>
           <nav className={styles.navContainer}>
             <ul className={styles.navList}>
-              <li className={styles.navItem}>
+              <li>
                 <Link className={styles.navLink} href="/">
                   Главная страница
                 </Link>
               </li>
-              <li className={styles.navItem}>
+              <li>
                 <Link className={styles.navLink} href="/admin">
                   Админ панель
                 </Link>
+              </li>
+              <li className={styles.navLink}>
+                <p onClick={handlerClick}>Уведомления</p>
+                {isOpen && <NotificationsWidget></NotificationsWidget>}
               </li>
             </ul>
           </nav>
