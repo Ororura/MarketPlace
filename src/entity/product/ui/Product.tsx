@@ -11,7 +11,6 @@ const Product: FC = () => {
     return <p className={styles.LoadingMessage}>Loading...</p>;
   }
 
-  console.log(data);
   return (
     <>
       {data &&
@@ -22,8 +21,11 @@ const Product: FC = () => {
                 style={{ borderRadius: "10px" }}
                 src={`http://localhost:8080/images/${value.imageName}`}
                 alt="Описание изображения"
-                layout="fill"
-                objectFit="cover"
+                fill
+                sizes="(max-width: 600px) 100vw,
+                       (max-width: 1200px) 50vw,
+                       33vw"
+                priority={idx === 0}
               />
             </div>
             <p className={styles.ProductTitle}>{value.title}</p>

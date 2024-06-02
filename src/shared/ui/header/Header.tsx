@@ -17,7 +17,7 @@ const Header: FC<PropsWithChildren> = ({ children }) => {
       <header className={styles.headerWrapper}>
         <div className={styles.headerContainer}>
           <div className={styles.logoContainer}>
-            <Image src="/logo.png" alt="logo" width="90" height="110" />
+            <Image src="/logo.png" alt="logo" width="90" height="110" priority />
           </div>
           <nav className={styles.navContainer}>
             <ul className={styles.navList}>
