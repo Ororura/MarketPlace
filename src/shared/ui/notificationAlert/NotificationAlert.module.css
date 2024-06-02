@@ -1,0 +1,15 @@
+.NotificationAlertWrapper {
+    position: fixed;
+    top: 80%;
+    right: 3%;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #4955cf;
+    color: white;
+    font-size: 18px;
+    z-index: 20;
+}
+
+.NotificationP {
+    margin: 5px;
+}

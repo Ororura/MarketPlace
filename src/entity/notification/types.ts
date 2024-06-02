@@ -7,6 +7,7 @@ interface INotification {
 
 interface IInitialState {
   notifications: INotification[];
+  openAlert: boolean;
 }
 
 export type { IInitialState, INotification };

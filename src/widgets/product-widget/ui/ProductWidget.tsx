@@ -5,12 +5,14 @@ import styles from "./ProductWidget.module.css";
 import { stompClient } from "@/shared/api";
 import { addNewNotification } from "@/entity/notification/model";
 import { useAppDispatch } from "@/app/providers";
+import { setCloseAlert } from "@/entity/notification/model/slice";
 
 const ProductWidget: FC = () => {
   const dispatch = useAppDispatch();
   stompClient.onConnect = () => {
     stompClient.subscribe("/topic/test", (message) => {
       dispatch(addNewNotification(JSON.parse(message.body)));
+      dispatch(setCloseAlert(true));
     });
   };
 
