@@ -39,4 +39,4 @@ const Product: FC = () => {
   );
 };
 
-export default Product;
+export { Product };
