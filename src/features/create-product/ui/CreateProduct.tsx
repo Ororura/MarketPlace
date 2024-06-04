@@ -39,7 +39,7 @@ export const CreateProduct: FC = () => {
       await refetch();
 
       stompClient.publish({
-        destination: "/app/uploadProduct",
+        destination: "/app/createProduct",
         body: "notification",
       });
     } catch (error) {
