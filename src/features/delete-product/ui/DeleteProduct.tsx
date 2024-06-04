@@ -28,7 +28,7 @@ const DeleteProduct: FC = () => {
               <strong>ID:</strong> {product.id}
             </p>
             <p className={styles.productCategory}>
-              <strong>Category:</strong> {product.category}
+              <strong>Категория:</strong> {product.category}
             </p>
             <button className={styles.deleteButton} onClick={() => handleDelete(product.id)}>
               Удалить
