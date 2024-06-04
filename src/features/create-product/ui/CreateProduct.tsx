@@ -37,9 +37,10 @@ export const CreateProduct: FC = () => {
     try {
       await postData(formData).unwrap();
       await refetch();
+
       stompClient.publish({
-        destination: "/app/test",
-        body: "test",
+        destination: "/app/uploadProduct",
+        body: "notification",
       });
     } catch (error) {
       console.error("Error uploading file:", error);

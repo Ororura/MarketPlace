@@ -10,7 +10,7 @@ import { Product } from "@/entity/product/ui";
 const ProductWidget: FC = () => {
   const dispatch = useAppDispatch();
   stompClient.onConnect = () => {
-    stompClient.subscribe("/topic/test", (message) => {
+    stompClient.subscribe("/topic/notifications", (message) => {
       dispatch(addNewNotification(JSON.parse(message.body)));
       dispatch(setCloseAlert(true));
     });
