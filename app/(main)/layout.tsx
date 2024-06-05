@@ -6,6 +6,7 @@ import StoreProvider from "@/app/providers/StoreProvider";
 import { NextFont } from "next/dist/compiled/@next/font";
 import { ReactNode } from "react";
 import { NotificationAlert } from "@/shared/ui/notificationAlert";
+import { WebSocketProvider } from "@/app/context";
 
 const inter: NextFont = Inter({ subsets: ["latin"] });
 
@@ -22,12 +23,14 @@ export default function RootLayout({
 }>) {
   return (
     <StoreProvider>
-      <html lang="en">
-        <body className={inter.className}>
-          <Header>{children}</Header>
-          <NotificationAlert></NotificationAlert>
-        </body>
-      </html>
+      <WebSocketProvider>
+        <html lang="en">
+          <body className={inter.className}>
+            <Header>{children}</Header>
+            <NotificationAlert></NotificationAlert>
+          </body>
+        </html>
+      </WebSocketProvider>
     </StoreProvider>
   );
 }

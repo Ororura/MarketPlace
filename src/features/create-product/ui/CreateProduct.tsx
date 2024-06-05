@@ -6,11 +6,12 @@ import { SendData } from "@/shared/types/types";
 import { useCreateUserMutation } from "@/features/create-product/api";
 import { useGetProductQuery } from "@/entity/product/api/api";
 import styles from "./CreateProduct.module.css";
-import { stompClient } from "@/shared/api";
+import { useWebSocket } from "@/app/context";
 
 export const CreateProduct: FC = () => {
   const { register, handleSubmit } = useForm<SendData>();
   const [postData, { isLoading }] = useCreateUserMutation();
+  const { client } = useWebSocket();
   const { refetch } = useGetProductQuery();
 
   const onSubmit: SubmitHandler<SendData> = async (data) => {
@@ -37,11 +38,12 @@ export const CreateProduct: FC = () => {
     try {
       await postData(formData).unwrap();
       await refetch();
-
-      stompClient.publish({
-        destination: "/app/createProduct",
-        body: "notification",
-      });
+      if (client) {
+        client.publish({
+          destination: "/app/createProduct",
+          body: "notification",
+        });
+      }
     } catch (error) {
       console.error("Error uploading file:", error);
     }
