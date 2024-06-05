@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../globals.css";
 import { Header } from "@/shared/ui/header";
-import StoreProvider from "@/app/providers/StoreProvider";
+import StoreProvider from "@/app/providers/store/StoreProvider";
 import { NextFont } from "next/dist/compiled/@next/font";
 import { ReactNode } from "react";
 import { NotificationAlert } from "@/shared/ui/notificationAlert";
-import { WebSocketProvider } from "@/app/context";
+import { WebSocketProvider } from "@/app/providers/websockets";
 
 const inter: NextFont = Inter({ subsets: ["latin"] });
 

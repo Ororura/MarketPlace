@@ -6,7 +6,7 @@ import { SendData } from "@/shared/types/types";
 import { useCreateUserMutation } from "@/features/create-product/api";
 import { useGetProductQuery } from "@/entity/product/api/api";
 import styles from "./CreateProduct.module.css";
-import { useWebSocket } from "@/app/context";
+import { useWebSocket } from "@/app/providers/websockets";
 
 export const CreateProduct: FC = () => {
   const { register, handleSubmit } = useForm<SendData>();
