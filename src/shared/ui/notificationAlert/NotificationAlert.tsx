@@ -1,9 +1,11 @@
 "use client";
 import { FC } from "react";
-import styles from "./NotificationAlert.module.css";
+
 import { useAppDispatch, useAppSelector } from "@/app/providers/store";
 import { INotification } from "@/entity/notification/types";
 import { setCloseAlert } from "@/entity/notification/model/slice";
+
+import styles from "./NotificationAlert.module.css";
 
 const NotificationAlert: FC = () => {
   const notification: INotification = useAppSelector(

@@ -1,5 +1,6 @@
-import styles from "./page.module.css";
 import { ProductWidget } from "@/widgets/product-widget/ui";
+
+import styles from "./page.module.css";
 
 export default function Home() {
   return (

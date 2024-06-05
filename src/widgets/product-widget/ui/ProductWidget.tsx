@@ -1,7 +1,9 @@
 "use client";
 import { FC } from "react";
-import styles from "./ProductWidget.module.css";
+
 import { Product } from "@/entity/product/ui";
+
+import styles from "./ProductWidget.module.css";
 
 const ProductWidget: FC = () => {
   return (

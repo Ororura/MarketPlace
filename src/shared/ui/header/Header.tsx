@@ -1,9 +1,11 @@
 "use client";
 import { FC, PropsWithChildren, useState } from "react";
-import styles from "./Header.module.css";
 import Image from "next/image";
 import Link from "next/link";
+
 import { NotificationsWidget } from "@/widgets/notifications-widget/ui/NotificationsWidget";
+
+import styles from "./Header.module.css";
 
 const Header: FC<PropsWithChildren> = ({ children }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);

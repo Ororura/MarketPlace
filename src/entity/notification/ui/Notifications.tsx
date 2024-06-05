@@ -1,8 +1,10 @@
 "use client";
 import { FC, useEffect } from "react";
+
 import { useGetNotificationsQuery } from "@/entity/notification/api";
 import { useAppDispatch, useAppSelector } from "@/app/providers/store";
 import { addNewNotification } from "@/entity/notification/model";
+
 import styles from "./Notification.module.css";
 
 const Notifications: FC = () => {

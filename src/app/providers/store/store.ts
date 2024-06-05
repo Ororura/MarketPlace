@@ -1,4 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
+
 import { reducers } from "@/app/providers/store/reducers";
 import { api } from "@/shared/api";
 

@@ -1,5 +1,6 @@
-import { IProduct } from "@/shared/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
+import { IProduct } from "@/shared/types";
 import { productApi } from "@/entity/product/api";
 
 const initialState: IProduct[] = [];

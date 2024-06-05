@@ -1,11 +1,13 @@
 "use client";
 import { createContext, FC, PropsWithChildren, useEffect, useState } from "react";
+import { Client } from "@stomp/stompjs";
+
 import { stompClient } from "@/shared/api";
 import { addNewNotification } from "@/entity/notification/model";
 import { setCloseAlert } from "@/entity/notification/model/slice";
-import { useAppDispatch } from "../store";
-import { Client } from "@stomp/stompjs";
 import { ContextData } from "@/app/providers/websockets/types";
+
+import { useAppDispatch } from "../store";
 
 export const WebSocketContext = createContext<ContextData>({ client: null });
 

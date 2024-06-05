@@ -1,8 +1,10 @@
 "use client";
 import { FC } from "react";
+
 import { useGetProductQuery } from "@/entity/product/api/api";
-import styles from "./DeleteProduct.module.css";
 import { useDeleteProductMutation } from "@/features/delete-product/api";
+
+import styles from "./DeleteProduct.module.css";
 
 const DeleteProduct: FC = () => {
   const { data, refetch } = useGetProductQuery();

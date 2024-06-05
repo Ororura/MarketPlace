@@ -2,11 +2,13 @@
 
 import { FC } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
+
 import { SendData } from "@/shared/types/types";
 import { useCreateUserMutation } from "@/features/create-product/api";
 import { useGetProductQuery } from "@/entity/product/api/api";
-import styles from "./CreateProduct.module.css";
 import { useWebSocket } from "@/app/providers/websockets";
+
+import styles from "./CreateProduct.module.css";
 
 export const CreateProduct: FC = () => {
   const { register, handleSubmit } = useForm<SendData>();
