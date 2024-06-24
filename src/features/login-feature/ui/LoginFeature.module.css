@@ -1,0 +1,29 @@
+.containerForm {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+}
+
+.inputContainer {
+    font-size: 16px;
+    margin-top: 20px;
+    border: 0;
+    background-color: #b5caff;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.inputContainer::placeholder {
+}
+
+.buttonSend {
+    font-size: 16px;
+    padding: 10px;
+    background-color: #b5caff;
+    border: 0;
+    margin-top: 20px;
+    border-radius: 10px;
+    color: black;
+    font-weight: bold;
+}

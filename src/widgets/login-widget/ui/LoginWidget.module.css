@@ -1,0 +1,7 @@
+.containerLoginWidget {
+    width: fit-content;
+    background-color: #89a8ff;
+    padding: 20px;
+    margin: 20px auto auto;
+    border-radius: 10px;
+}

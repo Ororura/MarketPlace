@@ -34,8 +34,7 @@
             "group": "external",
             "position": "before"
           }
-        ],
-        "newlines-between": "always"
+        ]
       }
     ]
   }
