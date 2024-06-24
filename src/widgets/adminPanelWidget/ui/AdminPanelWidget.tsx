@@ -2,14 +2,15 @@
 import { FC } from "react";
 import { SubmitHandler } from "react-hook-form";
 
+import { z } from "zod";
 import { useWebSocket } from "@/app/providers/websockets";
 import { useGetProductQuery } from "@/entity/productInfo/api/api";
 import { SendData } from "@/shared/types/types";
 
-import { useCreateUserMutation } from "../../../features/createProduct/api";
-import { useDeleteProductMutation } from "../../../features/deleteProduct/api";
-import { CreateProduct } from "../../../features/createProduct/ui";
-import { DeleteProduct } from "../../../features/deleteProduct/ui";
+import { DeleteProduct } from "@/features/deleteProduct/ui";
+import { useCreateUserMutation } from "@/features/createProduct/api";
+import { useDeleteProductMutation } from "@/features/deleteProduct/api";
+import { CreateProduct } from "@/features/createProduct/ui";
 import styles from "./AdminPanelWidget.module.css";
 
 const AdminPanelWidget: FC = () => {
@@ -17,6 +18,14 @@ const AdminPanelWidget: FC = () => {
   const { client } = useWebSocket();
   const { data, refetch } = useGetProductQuery();
   const [deleteProduct] = useDeleteProductMutation();
+
+  const zodFormData = z.object({
+    title: z.string().min(1).max(10),
+    price: z.number().min(1).max(10000000),
+    description: z.string().min(1).max(10),
+    category: z.string().min(1).max(10),
+    rate: z.number().min(1).max(5),
+  });
 
   const handleDelete = async (id: number) => {
     try {
@@ -27,8 +36,18 @@ const AdminPanelWidget: FC = () => {
     }
   };
 
-  const onSubmit: SubmitHandler<SendData> = async (data) => {
+  const handlerCreate: SubmitHandler<SendData> = async (data) => {
     const formData: FormData = new FormData();
+
+    const isValidateData = zodFormData.parse({
+      title: data.title,
+      price: data.price,
+      description: data.description,
+      category: data.category,
+      rate: data.rate,
+    });
+
+    console.log(isValidateData);
 
     formData.append(
       "product",
@@ -64,7 +83,7 @@ const AdminPanelWidget: FC = () => {
 
   return (
     <div className={styles.panelWrapper}>
-      <CreateProduct onSubmit={onSubmit} isLoading={isLoading}></CreateProduct>
+      <CreateProduct onSubmit={handlerCreate} isLoading={isLoading}></CreateProduct>
       <DeleteProduct data={data} handlerDelete={handleDelete}></DeleteProduct>
     </div>
   );
