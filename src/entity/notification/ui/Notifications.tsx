@@ -1,31 +1,14 @@
-"use client";
-import { FC, useEffect } from "react";
+import { FC } from "react";
 
-import { useGetNotificationsQuery } from "@/entity/notification/api";
-import { useAppDispatch, useAppSelector } from "@/app/providers/store";
-import { addNewNotification } from "@/entity/notification/model";
+import { INotification } from "@/entity/notification/types";
 
 import styles from "./Notification.module.css";
 
-const Notifications: FC = () => {
-  const { data, isFetching } = useGetNotificationsQuery();
-  const sliceData = useAppSelector((state) => state.Notification.notifications);
-  const dispatch = useAppDispatch();
+type Props = {
+  sliceData: INotification[];
+};
 
-  useEffect(() => {
-    if (data) {
-      dispatch(addNewNotification(data));
-    }
-  }, [data, dispatch]);
-
-  if (isFetching) {
-    return (
-      <div className={styles.LoadingContent}>
-        <p>Загрузка...</p>
-      </div>
-    );
-  }
-
+const Notifications: FC<Props> = ({ sliceData }) => {
   return (
     <div>
       {sliceData &&

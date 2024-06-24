@@ -3,7 +3,7 @@ import { FC, PropsWithChildren, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { NotificationsWidget } from "@/widgets/notifications-widget/ui/NotificationsWidget";
+import { NotificationsWidget } from "@/widgets/notificationsWidget/ui/NotificationsWidget";
 
 import styles from "./Header.module.css";
 
@@ -31,6 +31,11 @@ const Header: FC<PropsWithChildren> = ({ children }) => {
               <li>
                 <Link className={styles.navLink} href="/admin">
                   Админ панель
+                </Link>
+              </li>
+              <li>
+                <Link className={styles.navLink} href="/cart">
+                  Корзина
                 </Link>
               </li>
               <li className={styles.navItemWithNotifications}>

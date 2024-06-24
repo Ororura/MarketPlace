@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 interface IProduct {
   id: number;
   title: string;
@@ -18,4 +20,14 @@ interface SendData {
   file: FileList;
 }
 
-export type { IProduct, SendData };
+interface CartData {
+  value: IProduct[];
+}
+
+type PropsProduct = {
+  value: IProduct;
+  isFetching?: boolean;
+  children?: ReactNode;
+};
+
+export type { IProduct, SendData, CartData, PropsProduct };

@@ -1,43 +1,16 @@
 import { FC } from "react";
-import Image, { ImageLoader } from "next/image";
 
-import { useGetProductQuery } from "@/entity/product/api/api";
-import { IProduct } from "@/shared/types";
+import { PropsProduct } from "@/shared/types/types";
+import { ProductInfo } from "@/entity/productInfo/ui";
 
-import styles from "./Product.module.css";
+import s from "./Product.module.css";
 
-const Product: FC = () => {
-  const { data, isFetching } = useGetProductQuery();
-
-  const imageLoader: ImageLoader = ({ src }) => {
-    return `${process.env.NEXT_PUBLIC_LOCALHOST}/images/${src}`;
-  };
-
-  if (isFetching) {
-    return <p className={styles.LoadingMessage}>Loading...</p>;
-  }
-
+const Product: FC<PropsProduct> = ({ value, isFetching, children }) => {
   return (
-    <>
-      {data &&
-        data.map((value: IProduct, idx) => (
-          <div key={idx} className={styles.ProductCard}>
-            <Image
-              style={{ borderRadius: "10px", objectFit: "contain" }}
-              loader={imageLoader}
-              src={value.imageName}
-              width={200}
-              height={100}
-              alt={value.imageName}
-            />
-            <p className={styles.ProductTitle}>{value.title}</p>
-            <p className={styles.ProductDescription}>{value.description}</p>
-            <p className={styles.ProductCategory}>{value.category}</p>
-            <p className={styles.ProductPrice}>₽{value.price.toFixed(2)}</p>
-            <p className={styles.ProductRating}>Рейтинг: {value.rate}</p>
-          </div>
-        ))}
-    </>
+    <div className={s.ProductCard}>
+      <ProductInfo value={value} isFetching={isFetching} />
+      {children}
+    </div>
   );
 };
 
