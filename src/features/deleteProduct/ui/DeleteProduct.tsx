@@ -7,10 +7,10 @@ import styles from "./DeleteProduct.module.css";
 
 type Props = {
   data: IProduct[] | undefined;
-  handlerDelete: (id: number) => Promise<void>;
+  onSubmit: (id: number) => Promise<void>;
 };
 
-const DeleteProduct: FC<Props> = ({ data, handlerDelete }) => {
+const DeleteProduct: FC<Props> = ({ data, onSubmit }) => {
   return (
     <div className={styles.deleteProductWrapper}>
       {data &&
@@ -24,7 +24,7 @@ const DeleteProduct: FC<Props> = ({ data, handlerDelete }) => {
             <p className={styles.productCategory}>
               <strong>Категория:</strong> {product.category}
             </p>
-            <button className={styles.deleteButton} onClick={() => handlerDelete(product.id)}>
+            <button className={styles.deleteButton} onClick={() => onSubmit(product.id)}>
               Удалить
             </button>
           </div>

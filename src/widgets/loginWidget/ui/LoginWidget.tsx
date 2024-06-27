@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { LoginFeature } from "../../../features/loginFeature/ui";
+import { LoginFeature } from "@/features/loginFeature/ui";
 
 const LoginWidget: FC = () => {
   return (
