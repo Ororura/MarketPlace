@@ -1,7 +1,7 @@
 "use client";
 import { FC } from "react";
 
-import { AdminPanelWidget } from "../../../src/widgets/adminPanelWidget/ui";
+import { AdminPanelWidget } from "@/widgets/adminPanelWidget/ui";
 
 const Admin: FC = () => {
   return (

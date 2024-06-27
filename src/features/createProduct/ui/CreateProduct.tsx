@@ -20,8 +20,8 @@ export const CreateProduct: FC<Props> = ({ onSubmit, isLoading }) => {
       <input type="text" placeholder="Название" {...register("title")} className={styles.input} />
       <input type="text" placeholder="Описание" {...register("description")} className={styles.input} />
       <input type="text" placeholder="Категория" {...register("category")} className={styles.input} />
-      <input type="number" placeholder="Цена" {...register("price")} className={styles.input} />
-      <input type="number" placeholder="Рейтинг" {...register("rate")} className={styles.input} />
+      <input type="number" max={100000} placeholder="Цена" {...register("price")} className={styles.input} />
+      <input type="number" max={5} placeholder="Рейтинг" {...register("rate")} className={styles.input} />
       <button type="submit" disabled={isLoading} className={styles.button}>
         {isLoading ? "Загружается..." : "Создать"}
       </button>

@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 
 import "../globals.css";
 import { NextFont } from "next/dist/compiled/@next/font";
-import { ReactNode } from "react";
+import { FC, PropsWithChildren } from "react";
 
 import { Header } from "@/shared/ui/header";
 import StoreProvider from "@/app/providers/store/StoreProvider";
@@ -18,15 +18,11 @@ export const metadata: Metadata = {
   icons: "/logo.png",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: ReactNode;
-}>) {
+const RootLayout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <StoreProvider>
       <WebSocketProvider>
-        <html lang="en">
+        <html lang="ru">
           <body className={inter.className}>
             <Header>{children}</Header>
             <NotificationAlert></NotificationAlert>
@@ -35,4 +31,6 @@ export default function RootLayout({
       </WebSocketProvider>
     </StoreProvider>
   );
-}
+};
+
+export default RootLayout;

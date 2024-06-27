@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { LoginWidget } from "../../../src/widgets/loginWidget/ui";
+import { LoginWidget } from "@/widgets/loginWidget/ui";
 
 const LoginPage: FC = () => {
   return (
