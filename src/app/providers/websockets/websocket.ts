@@ -1,7 +1,7 @@
 import { Client } from "@stomp/stompjs";
 
 const stompClient = new Client({
-  brokerURL: "ws://localhost:8080/ws",
+  brokerURL: process.env.NEXT_PUBLIC_WS_PATH,
 });
 
 export { stompClient };
