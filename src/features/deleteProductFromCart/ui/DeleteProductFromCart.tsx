@@ -1,7 +1,6 @@
-import { FC, FormEvent } from "react";
+import { FC } from "react";
+import { useUpdateCart } from "@/entity/cart/lib/hooks/hooks";
 
-import { useAppDispatch } from "@/app/providers/store";
-import { deleteProductFromCart } from "@/entity/cart/model";
 import s from "@/features/addProductToCart/ui/AddProductToCart.module.css";
 
 type Props = {
@@ -9,13 +8,7 @@ type Props = {
 };
 
 const DeleteProductFromCart: FC<Props> = ({ id }) => {
-  const dispatch = useAppDispatch();
-
-  const handlerDeleteProductFromCart = (event: FormEvent<HTMLFormElement>, id: number) => {
-    event.preventDefault();
-    dispatch(deleteProductFromCart(id));
-  };
-
+  const { handlerDeleteProductFromCart } = useUpdateCart();
   return (
     <form
       onSubmit={(event) => {

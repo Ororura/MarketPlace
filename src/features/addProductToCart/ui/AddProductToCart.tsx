@@ -1,7 +1,6 @@
-import { FC, FormEvent } from "react";
+import { FC } from "react";
+import { useUpdateCart } from "@/entity/cart/lib/hooks/hooks";
 
-import { addProductToCart } from "@/entity/cart/model";
-import { useAppDispatch } from "@/app/providers/store";
 import { IProduct } from "@/shared/types";
 
 import s from "./AddProductToCart.module.css";
@@ -11,12 +10,7 @@ type Props = {
 };
 
 const AddProductToCart: FC<Props> = ({ product }) => {
-  const dispatch = useAppDispatch();
-
-  const handlerAddProductToCart = (event: FormEvent<HTMLFormElement>, cartNumber: IProduct) => {
-    event.preventDefault();
-    dispatch(addProductToCart(cartNumber));
-  };
+  const { handlerAddProductToCart } = useUpdateCart();
 
   return (
     <form
