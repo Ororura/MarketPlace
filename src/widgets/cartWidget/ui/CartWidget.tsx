@@ -1,8 +1,8 @@
 "use client";
 
 import { FC } from "react";
-
 import { Product } from "@/entity/product/ui";
+
 import { DeleteProductFromCart } from "@/features/deleteProductFromCart/ui";
 import { useAppSelector } from "@/app/providers/store";
 import { IProduct } from "@/shared/types";
@@ -20,9 +20,10 @@ const CartWidget: FC = () => {
     <div className={s.widgetContainer}>
       {cart.length !== 0 &&
         cart.map((el, idx) => (
-          <Product key={idx} value={el}>
+          <div key={idx} className={s.ProductCard}>
+            <Product value={el} />
             <DeleteProductFromCart id={el.id} />
-          </Product>
+          </div>
         ))}
     </div>
   );

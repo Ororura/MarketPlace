@@ -1,8 +1,32 @@
 .widgetContainer {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
     gap: 20px;
     padding: 20px;
     margin: auto;
     width: 70%;
+}
+
+.ProductCard {
+    background: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    padding: 16px;
+    max-width: 200px;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box; /* Добавлено для корректного учета padding и ширины */
+}
+
+@media (max-width: 1090px) {
+    .widgetContainer {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 800px) {
+    .widgetContainer {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
 }

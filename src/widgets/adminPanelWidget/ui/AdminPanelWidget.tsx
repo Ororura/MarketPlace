@@ -1,8 +1,7 @@
-"use client";
 import { FC } from "react";
 
 import { useUpdateProduct } from "@/entity/product/lib/hooks/hooks";
-import { useGetProductQuery } from "@/entity/productInfo/api/api";
+import { useGetProductQuery } from "@/entity/product/api/api";
 
 import { DeleteProduct } from "@/features/deleteProduct/ui";
 import { useCreateUserMutation } from "@/features/createProduct/api";

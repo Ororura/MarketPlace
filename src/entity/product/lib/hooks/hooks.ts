@@ -3,7 +3,7 @@ import { SubmitHandler } from "react-hook-form";
 import { useWebSocket } from "@/app/providers/websockets";
 import { useCreateUserMutation } from "@/features/createProduct/api";
 import { SendData } from "@/shared/types/types";
-import { useGetProductQuery } from "@/entity/productInfo/api/api";
+import { useGetProductQuery } from "@/entity/product/api/api";
 import { useDeleteProductMutation } from "@/features/deleteProduct/api";
 
 const useUpdateProduct = () => {

@@ -1,11 +1,72 @@
-.ProductCard {
-    background: #f8f8f8;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: auto;
-    padding: 16px;
-    max-width: 200px;
-    text-align: center;
-    height: auto;
-    width: 250px;
+.imageContainer {
+    max-width: 100%;
+    border-radius: 10px;
+    object-fit: contain;
 }
+
+.ProductTitle {
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ProductDescription {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.ProductCategory {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+.ProductPrice {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.ProductRating {
+    font-size: 14px;
+    color: #ff9900;
+}
+
+.LoadingMessage {
+    width: 100%;
+    font-size: 20px;
+    color: #666;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.ProductImage {
+}
+
+/*@media (min-width: 601px) and (max-width: 1024px) {*/
+/*    .imageContainer {*/
+/*        width: auto;*/
+/*        height: 100px;*/
+/*        max-width: 80%;*/
+/*        max-height: 80%;*/
+/*        border-radius: 10px;*/
+/*        object-fit: contain;*/
+/*    }*/
+/*}*/
+
+/*@media (min-width: 1025px) {*/
+/*    .imageContainer {*/
+/*        width: auto;*/
+/*        height: 100px;*/
+/*        max-width: 60%;*/
+/*        max-height: 60%;*/
+/*        border-radius: 10px;*/
+/*        object-fit: contain;*/
+/*    }*/
+/*}*/

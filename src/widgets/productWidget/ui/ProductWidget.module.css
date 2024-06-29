@@ -6,3 +6,26 @@
     margin: auto;
     width: 70%;
 }
+
+.ProductCard {
+    background: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    padding: 16px;
+    max-width: 200px;
+    text-align: center;
+    height: auto;
+    width: 250px;
+}
+
+.emptyProductContainer {
+    display: flex;
+    width: fit-content;
+    margin: 100px auto ;
+}
+
+.emptyP {
+    font-weight: bold;
+    font-size: 25px;
+}

@@ -4,7 +4,7 @@ import { api } from "@/shared/api";
 import { notificationSlice } from "@/entity/notification/model";
 
 import { cartSlice } from "@/entity/cart/model";
-import { productSlice } from "@/entity/productInfo/model";
+import { productSlice } from "@/entity/product/model";
 
 export const reducers = combineReducers({
   [api.reducerPath]: api.reducer,

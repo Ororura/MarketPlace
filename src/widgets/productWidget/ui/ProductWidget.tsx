@@ -1,23 +1,33 @@
 "use client";
 import { FC } from "react";
+import { Product } from "@/entity/product/ui";
 
 import { AddProductToCart } from "@/features/addProductToCart/ui";
-import { Product } from "@/entity/product/ui";
-import { useGetProductQuery } from "@/entity/productInfo/api/api";
+import { useGetProductQuery } from "@/entity/product/api/api";
 import { IProduct } from "@/shared/types";
+import s from "./ProductWidget.module.css";
 
 import styles from "./ProductWidget.module.css";
 
 const ProductWidget: FC = () => {
   const { data, isFetching } = useGetProductQuery();
 
+  if (data === undefined) {
+    return (
+      <div className={s.emptyProductContainer}>
+        <p className={s.emptyP}>К сожалению, товаров нет! :(</p>
+      </div>
+    );
+  }
+
   return (
     <div className={styles.ProductWrapper}>
       {data &&
         data.map((value: IProduct, idx) => (
-          <Product value={value} key={idx} isFetching={isFetching}>
+          <div key={idx} className={s.ProductCard}>
+            <Product value={value} isFetching={isFetching} />
             <AddProductToCart product={value} />
-          </Product>
+          </div>
         ))}
     </div>
   );
