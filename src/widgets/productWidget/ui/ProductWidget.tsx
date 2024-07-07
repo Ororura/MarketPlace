@@ -12,7 +12,7 @@ import styles from "./ProductWidget.module.css";
 const ProductWidget: FC = () => {
   const { data, isFetching } = useGetProductQuery();
 
-  if (data === undefined) {
+  if (data === undefined || data.length === 0) {
     return (
       <div className={s.emptyProductContainer}>
         <p className={s.emptyP}>К сожалению, товаров нет! :(</p>
