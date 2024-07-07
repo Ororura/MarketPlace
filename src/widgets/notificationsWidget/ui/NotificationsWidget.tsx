@@ -1,11 +1,11 @@
 "use client";
 import { FC, useEffect } from "react";
 
-import { INotification } from "@/entity/notification/types";
+import { INotification } from "@/entities/notification/types";
 import { useAppDispatch, useAppSelector } from "@/app/providers/store";
-import { useGetNotificationsQuery } from "@/entity/notification/api";
-import { addNewNotification } from "@/entity/notification/model";
-import { Notifications } from "@/entity/notification/ui";
+import { useGetNotificationsQuery } from "@/entities/notification/api";
+import { addNewNotification } from "@/entities/notification/model";
+import { Notifications } from "@/entities/notification/ui";
 
 import styles from "./Notifications.module.css";
 

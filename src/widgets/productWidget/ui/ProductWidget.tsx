@@ -1,9 +1,9 @@
 "use client";
 import { FC } from "react";
-import { Product } from "@/entity/product/ui";
+import { Product } from "@/entities/product/ui";
 
 import { AddProductToCart } from "@/features/addProductToCart/ui";
-import { useGetProductQuery } from "@/entity/product/api/api";
+import { useGetProductQuery } from "@/entities/product/api/api";
 import { IProduct } from "@/shared/types";
 import s from "./ProductWidget.module.css";
 

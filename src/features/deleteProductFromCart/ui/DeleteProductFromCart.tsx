@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { useUpdateCart } from "@/entity/cart/lib/hooks/hooks";
+import { useUpdateCart } from "@/entities/cart/lib/hooks/hooks";
 
 import s from "@/features/addProductToCart/ui/AddProductToCart.module.css";
 

@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { useUpdateCart } from "@/entity/cart/lib/hooks/hooks";
+import { useUpdateCart } from "@/entities/cart/lib/hooks/hooks";
 
 import { IProduct } from "@/shared/types";
 

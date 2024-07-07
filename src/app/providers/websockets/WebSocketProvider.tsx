@@ -3,8 +3,8 @@ import { createContext, FC, PropsWithChildren, useEffect, useState } from "react
 import { Client } from "@stomp/stompjs";
 
 import { stompClient } from "@/shared/api";
-import { addNewNotification } from "@/entity/notification/model";
-import { setCloseAlert } from "@/entity/notification/model/slice";
+import { addNewNotification } from "@/entities/notification/model";
+import { setCloseAlert } from "@/entities/notification/model/slice";
 import { ContextData } from "@/app/providers/websockets/types";
 
 import { useAppDispatch } from "../store";

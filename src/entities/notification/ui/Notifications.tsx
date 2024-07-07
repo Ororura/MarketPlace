@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-import { INotification } from "@/entity/notification/types";
+import { INotification } from "@/entities/notification/types";
 
 import styles from "./Notification.module.css";
 

@@ -1,7 +1,7 @@
 "use client";
 
 import { FC } from "react";
-import { Product } from "@/entity/product/ui";
+import { Product } from "@/entities/product/ui";
 
 import { DeleteProductFromCart } from "@/features/deleteProductFromCart/ui";
 import { useAppSelector } from "@/app/providers/store";

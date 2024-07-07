@@ -1,7 +1,7 @@
 import { FormEvent, useCallback } from "react";
 import { IProduct } from "@/shared/types";
 import { useAppDispatch } from "@/app/providers/store";
-import { addProductToCart, deleteProductFromCart } from "@/entity/cart/model";
+import { addProductToCart, deleteProductFromCart } from "@/entities/cart/model";
 
 const useUpdateCart = () => {
   const dispatch = useAppDispatch();
