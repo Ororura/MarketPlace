@@ -19,7 +19,7 @@ const useUpdateProduct = () => {
         await refetch();
       } catch (error) {
         if (error instanceof Error) {
-          console.log("Failed to delete the product: ", error);
+          console.error("Failed to delete the product: ", error);
         }
       }
     },

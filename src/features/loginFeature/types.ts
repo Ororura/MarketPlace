@@ -3,4 +3,8 @@ interface LoginData {
   password: string;
 }
 
-export type { LoginData };
+type JwtResponse = {
+  response: string;
+};
+
+export type { LoginData, JwtResponse };

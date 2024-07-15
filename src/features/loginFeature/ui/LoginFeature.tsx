@@ -11,7 +11,7 @@ const LoginFeature: FC = () => {
 
   const onSubmit: SubmitHandler<LoginData> = async (data) => {
     const token = await postData(data);
-    await console.log(token);
+    console.log(token);
   };
 
   return (
