@@ -1,18 +1,13 @@
 "use client";
 import { FC } from "react";
-import { SubmitHandler, useForm } from "react-hook-form";
+import { useForm } from "react-hook-form";
+import { useSubmit } from "@/features/loginFeature/lib/hooks";
 
-import { useLoginMutation } from "@/features/loginFeature/api";
 import { LoginData } from "@/features/loginFeature/types";
 
 const LoginFeature: FC = () => {
   const { register, handleSubmit } = useForm<LoginData>();
-  const [postData] = useLoginMutation();
-
-  const onSubmit: SubmitHandler<LoginData> = async (data) => {
-    const token = await postData(data);
-    console.log(token);
-  };
+  const { onSubmit } = useSubmit();
 
   return (
     <div>
