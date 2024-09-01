@@ -1,7 +1,5 @@
 import { FC } from "react";
-
 import { INotification } from "@/entities/notification/types";
-
 import styles from "./Notification.module.css";
 
 type Props = {

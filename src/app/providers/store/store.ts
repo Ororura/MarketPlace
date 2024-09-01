@@ -1,7 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
 
-import { reducers } from "@/app/providers/store/reducers";
 import { api } from "@/shared/api";
+
+import { reducers } from "@/app/providers/store/reducers";
 
 export const store = () => {
   return configureStore({
