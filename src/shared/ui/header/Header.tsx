@@ -29,6 +29,16 @@ const Header: FC<PropsWithChildren> = ({ children }) => {
                 </Link>
               </li>
               <li>
+                <Link className={styles.navLink} href="/login">
+                  Авторизоваться
+                </Link>
+              </li>
+              <li>
+                <Link className={styles.navLink} href="/registration">
+                  Зарегестрироваться
+                </Link>
+              </li>
+              <li>
                 <Link className={styles.navLink} href="/admin">
                   Админ панель
                 </Link>

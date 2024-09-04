@@ -1,5 +1,5 @@
 "use client";
-import { FC, useEffect } from "react";
+import { FC } from "react";
 import { Product } from "@/entities/product/ui";
 
 import { AddProductToCart } from "@/features/addProductToCart/ui";
