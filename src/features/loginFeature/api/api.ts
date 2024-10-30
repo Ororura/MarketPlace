@@ -10,11 +10,15 @@ export const loginApi = api.injectEndpoints({
         method: "POST",
         body,
       }),
-      async onQueryStarted(arg, { queryFulfilled }) {
+      async onQueryStarted(_, { queryFulfilled }) {
         try {
           const { data } = await queryFulfilled;
           Cookies.set("jwt", data.response, { expires: 7 });
-        } catch (e) {}
+        } catch (e) {
+          if (e instanceof Error) {
+            console.error(e.message);
+          }
+        }
       },
     }),
   }),
